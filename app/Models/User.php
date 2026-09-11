@@ -18,6 +18,11 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, HasApiTokens;
 
+    public function contato()
+    {
+        return $this->hasMany(Contato::class, 'users_id');
+    }
+
     /**
      * Get the attributes that should be cast.
      *
